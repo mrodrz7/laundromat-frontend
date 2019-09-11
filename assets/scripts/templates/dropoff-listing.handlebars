@@ -1,0 +1,17 @@
+{{#each dropoffs as |dropoff|}} <!-- 'books' is called on ui.js -->
+  {{log dropoff}}
+  <section data-id="{{dropoff.id}}">
+    <div>
+        <h6>Id:</h6>
+        <p>
+          {{dropoff.id}}
+        </p>
+
+        <h6>Dropoff Date:</h6>
+        <p>{{dropoff.date_dropping_off}}</p>
+      <hr>
+    </div>
+    <button class="btn btn-danger delete-button" data-id="{{dropoff.id}}">Remove</button>
+  </section>
+
+{{/each}}

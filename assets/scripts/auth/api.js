@@ -7,7 +7,7 @@ const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
-    data
+    data: data
   })
 }
 
@@ -40,9 +40,32 @@ const changePassword = function (data) {
   })
 }
 
+const getDropoffs = function () {
+  return $.ajax({
+    url: config.apiUrl + '/dropoffs',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteDropoffs = function (id) {
+  console.log(store)
+  return $.ajax({
+    url: config.apiUrl + '/dropoffs/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  getDropoffs,
+  deleteDropoffs
 }
