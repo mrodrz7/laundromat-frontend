@@ -61,11 +61,35 @@ const deleteDropoffs = function (id) {
   })
 }
 
+const updateDropoffs = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/dropoffs/' + data.id,
+    method: 'PATCH',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const createDropoffs = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/dropoffs/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   getDropoffs,
-  deleteDropoffs
+  deleteDropoffs,
+  updateDropoffs,
+  createDropoffs
 }

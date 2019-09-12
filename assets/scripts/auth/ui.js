@@ -30,6 +30,7 @@ const signInSuccess = function (data) {
   $('#change-password').show()
   $('#getDropoffsButton').show()
   $('#clearDropoffsButton').show()
+  $('#create-dropoffs').show()
 }
 
 const signInFailure = function () {
@@ -48,6 +49,11 @@ const signOutSuccess = function (data) {
   $('#sign-out').hide()
   $('#sign-up').show()
   $('#sign-in').show()
+  $('.content').html('')
+  $('#getDropoffsButton').hide()
+  $('#change-password').hide()
+  $('#createDropoffsButton').hide()
+  $('#clearDropoffsButton').hide()
 }
 
 const signOutFailure = function () {
@@ -80,6 +86,14 @@ const getDropoffsSuccess = (data) => {
   })
   $('.content').html('')
   $('.content').append(showDropoffsHtml)
+  $('#message').hide()
+}
+
+const createDropoffsSuccess = function () {
+  $('#message').text('Signed up successfully')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('form').trigger('reset')
 }
 
 const clearDropoffs = () => {
@@ -100,6 +114,8 @@ module.exports = {
   signOutFailure,
   changePasswordFailure,
   getDropoffsSuccess,
+  createDropoffsSuccess,
   clearDropoffs,
+  // createShowSuccess,
   failure
 }
