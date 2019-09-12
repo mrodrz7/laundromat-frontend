@@ -54,6 +54,7 @@ const signOutSuccess = function (data) {
   $('#change-password').hide()
   $('#createDropoffsButton').hide()
   $('#clearDropoffsButton').hide()
+  $('#create-dropoffs').hide()
 }
 
 const signOutFailure = function () {
@@ -96,6 +97,13 @@ const createDropoffsSuccess = function () {
   $('form').trigger('reset')
 }
 
+const updateDropoffsSuccess = function () {
+  $('message').text('Updated Dropoff Successfully')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  $('form').trigger('reset')
+}
+
 const clearDropoffs = () => {
   $('.content').empty()
 }
@@ -116,6 +124,7 @@ module.exports = {
   getDropoffsSuccess,
   createDropoffsSuccess,
   clearDropoffs,
+  updateDropoffsSuccess,
   // createShowSuccess,
   failure
 }

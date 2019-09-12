@@ -103,6 +103,7 @@ const addHandlers = () => {
   $('#getDropoffsButton').on('click', onGetDropoffs)
   $('#clearDropoffsButton').on('click', onClearDropoffs)
   $('.content').on('click', '.delete-button', onDeleteDropoff)
+  $('.content').on('click', '.edit-button', onUpdateDropoffs)
   $('#create-dropoffs').on('submit', onCreateDropoffs)
   // $('#create-dropoffs').on('click', onCreateShow)
 }
