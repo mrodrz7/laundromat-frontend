@@ -9,15 +9,15 @@
         <h6>Dropoff Date:</h6>
         <p>{{dropoff.date_dropping_off}}</p>
 
-        <h6>Colors/Whites</h6>
+        <h6>Colors/Whites:</h6>
         <p>{{dropoff.load_type}}</p>
 
-        <h6>Note for Us</h6>
+        <h6>Note for Us:</h6>
         <p>{{dropoff.note}}</p>
       <br>
     </div>
     <button class="btn btn-danger delete-button" data-id="{{dropoff.id}}">Remove</button>
-    <buton class="btn editDropoffsButton" data-id="{{dropoff}}">Edit</buton>
+    <buton class="btn edit-button" data-id="{{dropoff.id}}">Edit</buton>
   </section>
 
 {{/each}}
