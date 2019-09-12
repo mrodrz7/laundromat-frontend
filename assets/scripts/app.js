@@ -11,8 +11,8 @@ const dropoffEvents = require('./auth/events.js')
 
 $(() => {
   dropoffEvents.addHandlers()
+  $('#create-dropoffs').hide()
   $('#getDropoffsButton').hide()
-  $('#clearDropoffsButton').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
