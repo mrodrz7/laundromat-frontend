@@ -28,7 +28,7 @@
             <button class="create">Sign Up!</button>
         </fieldset>
       </form>
-    <hr>
+    <br>
       <form id="sign-in" class="border">
         <fieldset>
           <legend>Welcome Back</legend>
@@ -37,12 +37,23 @@
             <button class="login">Sign In!</button>
         </fieldset>
       </form>
-    <hr>
+    <br>
     <!-- handlebars -->
     <button id="getDropoffsButton" class="btn btn-info mr-2">Get Dropoffs!</button>
-    <!-- <button id="clearDropoffsButton" class="btn btn-outline-info">Clear Dropoffs!</button> -->
+    <button id="clearDropoffsButton" class="btn btn-outline-info">Clear Dropoffs!</button>
+    <br>
     <div id="content" class="content"></div>
 
+    <form id="create-dropoffs" class="border">
+        <fieldset>
+          <legend>Create a Dropoff</legend>
+            <input type="text" name="dropoff[date_dropping_off]" placeholder="YYYY-MM-DD">
+            <input type="text" name="dropoff[load_type]" placeholder="Colors/Whites?">
+            <input type="text" name="dropoff[note]" placeholder="Leave a note!">
+            <button class="create">Submit</button>
+        </fieldset>
+    </form>
+    <br>
       <form id="change-password" class="border">
         <fieldset>
           <legend>Change Password</legend>
