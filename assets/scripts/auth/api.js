@@ -62,8 +62,9 @@ const deleteDropoffs = function (id) {
 }
 
 const updateDropoffs = function (data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/dropoffs/' + data.id,
+    url: config.apiUrl + '/dropoffs/' + data.dropoff.id,
     method: 'PATCH',
     data: data,
     headers: {
