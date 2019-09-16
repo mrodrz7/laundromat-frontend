@@ -56,6 +56,7 @@ const signOutSuccess = function (data) {
   $('#createDropoffsButton').hide()
   $('#clearDropoffsButton').hide()
   $('#create-dropoffs').hide()
+  $('#update-dropoffs').hide()
 }
 
 const signOutFailure = function () {
