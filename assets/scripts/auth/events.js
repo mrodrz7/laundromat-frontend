@@ -91,9 +91,9 @@ const onDeleteDropoff = (event) => {
 
 const onUpdateDropoffs = (event) => {
   event.preventDefault()
-  const id = $(event.target).data('id')
-  api.updateDropoffs(id)
-    .then(function () {
+  const data = getFormFields(event.target)
+  api.updateDropoffs(data)
+    .then(() => {
       onGetDropoffs(event)
     })
     .catch(ui.failure)
@@ -105,6 +105,7 @@ const addHandlers = () => {
   $('.content').on('click', '.delete-button', onDeleteDropoff)
   $('.content').on('click', '.edit-button', onUpdateDropoffs)
   $('#create-dropoffs').on('submit', onCreateDropoffs)
+  $('#update-dropoffs').on('submit', onUpdateDropoffs)
   // $('#create-dropoffs').on('click', onCreateShow)
 }
 

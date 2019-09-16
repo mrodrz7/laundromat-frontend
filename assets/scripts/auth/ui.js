@@ -31,6 +31,7 @@ const signInSuccess = function (data) {
   $('#getDropoffsButton').show()
   $('#clearDropoffsButton').show()
   $('#create-dropoffs').show()
+  $('#update-dropoffs').show()
 }
 
 const signInFailure = function () {
@@ -98,7 +99,7 @@ const createDropoffsSuccess = function () {
 }
 
 const updateDropoffsSuccess = function () {
-  $('message').text('Updated Dropoff Successfully')
+  $('#message').text('Updated Dropoff Successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('form').trigger('reset')
@@ -125,6 +126,5 @@ module.exports = {
   createDropoffsSuccess,
   clearDropoffs,
   updateDropoffsSuccess,
-  // createShowSuccess,
   failure
 }
