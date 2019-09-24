@@ -18,7 +18,6 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (data) {
-  console.log(data)
   store.user = data.user
   $('#message').text('Successful sign in')
   $('#message').removeClass()
@@ -83,17 +82,16 @@ const changePasswordFailure = function () {
 // Dropoff ui
 
 const getDropoffsSuccess = (data) => {
-  console.log(data)
   const showDropoffsHtml = showDropoffsTemplate({
     dropoffs: data.dropoffs
   })
   $('.content').html('')
   $('.content').append(showDropoffsHtml)
-  $('#message').hide()
+  $('form').trigger('reset')
 }
 
 const createDropoffsSuccess = function () {
-  $('#message').text('Signed up successfully')
+  $('#message').text('Created successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
   $('form').trigger('reset')
@@ -103,7 +101,6 @@ const updateDropoffsSuccess = function () {
   $('#message').text('Updated Dropoff Successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('form').trigger('reset')
 }
 
 const clearDropoffs = () => {
@@ -111,7 +108,7 @@ const clearDropoffs = () => {
 }
 
 const failure = (error) => {
-  console.error(error)
+  return error
 }
 
 module.exports = {
