@@ -19,7 +19,6 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
-  console.log(event)
   event.preventDefault()
   const data = getFormFields(event.target)
 
@@ -44,7 +43,6 @@ const onSignOut = function (event) {
 }
 
 // Dropoffs events below
-
 const onGetDropoffs = (event) => {
   event.preventDefault()
   api.getDropoffs()
@@ -54,24 +52,12 @@ const onGetDropoffs = (event) => {
 
 // create form
 const onCreateDropoffs = function (event) {
-  // event.preventDefault()
-  // const data = getFormFields(event.target).data()
-  // api.createDropoffs(data)
-  //   .then(ui.createDropoffsSuccess)
-  //   .catch(ui.failure)
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.createDropoffs(data)
     .then(ui.createDropoffsSuccess)
-    .catch(console.log)
+    .catch(ui.failure)
 }
-
-// const onCreateShow = function (event) {
-//   console.log(event)
-//   event.preventDefault()
-//   ui.createShowSuccess()
-// }
 
 const onClearDropoffs = (event) => {
   event.preventDefault()
@@ -79,7 +65,6 @@ const onClearDropoffs = (event) => {
 }
 
 const onDeleteDropoff = (event) => {
-  console.log(event)
   event.preventDefault()
   const id = $(event.target).data('id')
   api.deleteDropoffs(id)
@@ -106,16 +91,7 @@ const addHandlers = () => {
   $('.content').on('click', '.edit-button', onUpdateDropoffs)
   $('#create-dropoffs').on('submit', onCreateDropoffs)
   $('#update-dropoffs').on('submit', onUpdateDropoffs)
-  // $('#create-dropoffs').on('click', onCreateShow)
 }
-
-// const data = { dropoffs: [...] }
-// // dropoffs page template
-// const dropoffsPageTemplate = require('../templates/dropoffs.handlebars')
-// // give our template the data
-// const dropoffsPageHtml = dropoffsPageTemplate({ dropoffs: data.dropoffs })
-// // inject our compiled HTML into our webpage
-// $('.content').append(dropoffsPageHtml)
 
 module.exports = {
   onSignUp,
@@ -128,5 +104,4 @@ module.exports = {
   onUpdateDropoffs,
   onCreateDropoffs,
   addHandlers
-  // onCreateShow
 }
